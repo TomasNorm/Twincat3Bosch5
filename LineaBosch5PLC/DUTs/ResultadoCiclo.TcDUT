@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <DUT Name="ResultadoCiclo" Id="{6de0a3f1-dd98-486b-a8cb-9e08ee304487}">
+    <Declaration><![CDATA[{attribute 'pack_mode' := '1'}
+TYPE ResultadoCiclo :
+STRUCT
+	producto  : STRING[25];
+	ciclo: INT;
+	hora: DT;
+	FalloPuesto: ARRAY[1..18] OF BOOL;
+	RetrasoPuesto: ARRAY[1..18] OF INT;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

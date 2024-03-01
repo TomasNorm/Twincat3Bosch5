@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="MAIN" Id="{9f770d57-9dbb-4fa5-a7aa-3a4d202fe2cc}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	ControlSeguridad: Seguridad;
+	ElevadorFinLleno : BOOL;
+	ElevadorInicioLleno :BOOL;
+	ElevadorInicioPuedeExtraer :BOOL;
+	FalloTest :BOOL;
+
+	fbTime   : FB_LocalSystemTime := ( bEnable := TRUE, dwCycle := 100 );
+	
+	Semaforo: USINT;
+	EstadoPuestos: DINT;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[	
+ControlSeguridad();
+fbTime();
+gvl.HoraActual := SYSTEMTIME_TO_DT(fbTime.systemTime);
+
+///PUESTO 1 -----------------------------------
+
+Puesto12 ( Enable:= gvl.ModoRun, Reset := FALSE,SensorPallet:= gvl.Puesto12_Presencia, 
+		Centrador => gvl.Puesto12_centrador, StopperOFF => gvl.Puesto12_stoper,
+FinCiclo := gvl.FinCiclo, NumeroDePuesto :=1   );
+
+
+///PUESTO 2 -----------------------------------
+Puesto21 ( Enable:= gvl.ModoRun, Reset := FALSE,SensorPallet:= gvl.Puesto21_Presencia, 
+		Centrador => gvl.Puesto21_centrador, StopperOFF => gvl.Puesto21_stoper,
+FinCiclo := gvl.FinCiclo, NumeroDePuesto :=2   );
+Puesto22 ( Enable:= gvl.ModoRun, Reset := FALSE,SensorPallet:= gvl.Puesto22_Presencia, 
+		Centrador => gvl.Puesto22_centrador, StopperOFF => gvl.Puesto22_stoper,
+FinCiclo := gvl.FinCiclo, NumeroDePuesto :=3   );
+
+///PUESTO 3 -----------------------------------
+Puesto31 ( Enable:= gvl.ModoRun, Reset := FALSE,SensorPallet:= gvl.Puesto31_Presencia, 
+		Centrador => gvl.Puesto31_centrador, StopperOFF => gvl.Puesto31_stoper,
+FinCiclo := gvl.FinCiclo, NumeroDePuesto :=4   );
+Puesto32 ( Enable:= gvl.ModoRun, Reset := FALSE,SensorPallet:= gvl.Puesto32_Presencia, 
+		Centrador => gvl.Puesto32_centrador, StopperOFF => gvl.Puesto32_stoper,
+FinCiclo := gvl.FinCiclo, NumeroDePuesto :=5   );
+
+///PUESTO 4 -----------------------------------
+Puesto41 ( Enable:= gvl.ModoRun, Reset := FALSE,SensorPallet:= gvl.Puesto41_Presencia, 
+		Centrador => gvl.Puesto41_centrador, StopperOFF => gvl.Puesto41_stoper,
+FinCiclo := gvl.FinCiclo, NumeroDePuesto :=6   );
+Puesto42 ( Enable:= gvl.ModoRun, Reset := FALSE,SensorPallet:= gvl.Puesto42_Presencia, 
+		Centrador => gvl.Puesto42_centrador, StopperOFF => gvl.Puesto42_stoper,
+FinCiclo := gvl.FinCiclo, NumeroDePuesto :=7   );
+
+///PUESTO 5 -----------------------------------
+Puesto51 ( Enable:= gvl.ModoRun, Reset := FALSE,SensorPallet:= gvl.Puesto51_Presencia, 
+		Centrador => gvl.Puesto51_centrador, StopperOFF => gvl.Puesto51_stoper,
+FinCiclo := gvl.FinCiclo, NumeroDePuesto :=8   );
+Puesto52 ( Enable:= gvl.ModoRun, Reset := FALSE,SensorPallet:= gvl.Puesto52_Presencia, 
+		Centrador => gvl.Puesto52_centrador, StopperOFF => gvl.Puesto52_stoper,
+FinCiclo := gvl.FinCiclo, NumeroDePuesto :=9   );
+
+///PUESTO 6 -----------------------------------
+Puesto61 ( Enable:= gvl.ModoRun, Reset := FALSE,SensorPallet:= gvl.Puesto61_Presencia, 
+		Centrador => gvl.Puesto61_centrador, StopperOFF => gvl.Puesto61_stoper,
+FinCiclo := gvl.FinCiclo, NumeroDePuesto :=10   );
+Puesto62 ( Enable:= gvl.ModoRun, Reset := FALSE,SensorPallet:= gvl.Puesto62_Presencia, 
+		Centrador => gvl.Puesto62_centrador, StopperOFF => gvl.Puesto62_stoper,
+FinCiclo := gvl.FinCiclo, NumeroDePuesto :=11   );
+
+///PUESTO 7 -----------------------------------
+//Puesto71 ( Enable:= gvl.ModoRun, Reset := FALSE,SensorPallet:= gvl.Puesto71_Presencia, 
+//		Centrador => gvl.Puesto71_centrador, StopperOFF => gvl.Puesto71_stoper,
+//FinCiclo := gvl.FinCiclo, NumeroDePuesto :=12   );
+
+///*****************************************************
+
+Puesto71 ( Enable:= gvl.ModoRun, Reset :=FALSE,SensorPallet:= gvl.Puesto71_Presencia, 
+			sensorpieza1 :=TRUE, SelectorByPass := gvl.Puesto71_Bypass,
+		Centrador => gvl.Puesto71_centrador, StopperOFF => gvl.Puesto71_stoper,
+		FinCiclo := gvl.FinCiclo , NumeroDePuesto :=12  );
+gvl.Puesto71_Actuador:= Puesto71.Actuador;
+
+//***********************************************************
+
+
+
+//Puesto del Test 
+Puesto72 ( Enable:= gvl.ModoRun, Reset :=FALSE,SensorPallet:= gvl.Puesto72_Presencia, 
+			sensorpieza1 := gvl.Puesto72_presenciapieza, Centrador => gvl.Puesto72_centrador, StopperOFF => gvl.Puesto72_stoper,
+		FinCiclo := gvl.FinCiclo , NumeroDePuesto :=13  );
+gvl.Puesto72_Actuador := gvl.Puesto72.Ready; ///gvl.Puesto72_centrador AND gvl.Puesto72_PresenciaPieza ;
+gvl.Puesto72_LuzVerde := Puesto72.Ready;
+
+
+///PUESTO 8 -----------------------------------
+Puesto81 ( Enable:= gvl.ModoRun, Reset := FALSE,SensorPallet:= gvl.Puesto81_Presencia, 
+		Centrador => gvl.Puesto81_centrador, StopperOFF => gvl.Puesto81_stoper,
+		pulsador1:= gvl.Puesto81_Pulsador,
+FinCiclo := gvl.FinCiclo, NumeroDePuesto :=14   );
+
+Puesto82 ( Enable:= gvl.ModoRun, Reset := FALSE,SensorPallet:= gvl.Puesto82_Presencia, 
+		Centrador => gvl.Puesto82_centrador, StopperOFF => gvl.Puesto82_stoper,
+FinCiclo := gvl.FinCiclo, NumeroDePuesto :=15  );
+
+
+///PUESTO 9 -----------------------------------
+Puesto91 ( Enable:= gvl.ModoRun, Reset := FALSE,SensorPallet:= gvl.Puesto91_Presencia, 
+		Centrador => gvl.Puesto91_centrador, StopperOFF => gvl.Puesto91_stoper,
+FinCiclo := gvl.FinCiclo, NumeroDePuesto :=16   );
+
+
+
+/// ojo modo doble carga 
+gvl.ModoDobleCarga := TRUE;
+
+Puesto11 ( Enable:= gvl.ModoRun, Reset := FALSE,SensorPallet:= gvl.Puesto11_Presencia, 
+		Centrador => gvl.Puesto11_centrador, StopperOFF => gvl.Puesto11_stoper,
+FinCiclo := gvl.FinCiclo, NumeroDePuesto :=17  );
+
+
+Puesto92 ( Enable:= gvl.ModoRun, Reset := FALSE,SensorPallet:= gvl.Puesto92_Presencia, 
+		Centrador => gvl.Puesto92_centrador, StopperOFF => gvl.Puesto92_stoper,
+FinCiclo := gvl.FinCiclo, NumeroDePuesto :=18 , ModoDoble := gvl.ModoDobleCarga  );
+
+
+/// CONTROL ELEVADORES
+
+IF gvl.ModoDobleCarga = TRUE THEN
+	ElevadorFinLleno := gvl.Elevadorfin1_Presencia AND gvl.Elevadorfin2_Presencia;
+	ElevadorInicioLleno := gvl.Elevadorinicio1_Presencia AND gvl.Elevadorinicio2_Presencia;
+	ElevadorInicioPuedeExtraer := Puesto11.EsperandoPalet AND Puesto12.EsperandoPalet;
+ELSE
+	ElevadorFinLleno := gvl.Elevadorfin1_Presencia;
+	ElevadorInicioLleno := gvl.Elevadorinicio1_Presencia;
+	ElevadorInicioPuedeExtraer := Puesto11.EsperandoPalet;
+END_IF
+
+ElevadorInicioLinea( Enabled:= gvl.ModoRun, SeguridadOK:= GVL.SeguridadOK,
+					SensorPaletFuera := Puesto11.SensorPallet,
+					SensorPaletDentro := ElevadorInicioLleno,
+					 PuedeExtraer := Puesto11.EsperandoPalet AND NOT Puesto12.EsperandoPalet);
+					 
+ElevadorFinLinea( Enabled:= gvl.ModoRun, SeguridadOK:= GVL.SeguridadOK, 
+				SensorPaletDentro := ElevadorFinLleno,
+				SensorPaletFuera := gvl.Elevadorfin2_Presencia,
+				PuedeExtraer := TRUE);
+
+TerminalValvulas1.0 := ElevadorInicioLinea.StopperOFF;
+TerminalValvulas1.1 := gvl.Puesto11_stoper;
+TerminalValvulas1.2 := gvl.Puesto12_stoper;
+TerminalValvulas1.3 := gvl.Puesto11_centrador;
+TerminalValvulas1.4 := gvl.Puesto12_centrador;
+
+TerminalValvulas23.0 := gvl.Puesto21_stoper;
+TerminalValvulas23.1 := gvl.Puesto22_stoper;
+TerminalValvulas23.2 := gvl.Puesto31_stoper;
+TerminalValvulas23.3 := gvl.Puesto32_stoper;
+TerminalValvulas23.4 := gvl.Puesto21_centrador;
+TerminalValvulas23.5 := gvl.Puesto22_centrador;
+TerminalValvulas23.6 := gvl.Puesto31_centrador;
+TerminalValvulas23.7 := gvl.Puesto32_centrador;
+
+TerminalValvulas45.0 := gvl.Puesto41_stoper;
+TerminalValvulas45.1 := gvl.Puesto42_stoper;
+TerminalValvulas45.2 := gvl.Puesto51_stoper;
+TerminalValvulas45.3 := gvl.Puesto52_stoper;
+TerminalValvulas45.4 := gvl.Puesto41_centrador;
+TerminalValvulas45.5 := gvl.Puesto42_centrador;
+TerminalValvulas45.6 := gvl.Puesto51_centrador;
+TerminalValvulas45.7 := gvl.Puesto52_centrador;
+
+TerminalValvulas67.0 := gvl.Puesto61_stoper;
+TerminalValvulas67.1 := gvl.Puesto62_stoper;
+TerminalValvulas67.2 := gvl.Puesto71_stoper;
+TerminalValvulas67.3 := gvl.Puesto72_stoper;
+TerminalValvulas67.4 := gvl.Puesto61_centrador;
+TerminalValvulas67.5 := gvl.Puesto62_centrador;
+TerminalValvulas67.6 := gvl.Puesto71_centrador;
+TerminalValvulas67.7 := gvl.Puesto72_centrador;
+TerminalValvulas67_2.0 := gvl.Puesto72_actuador;
+TerminalValvulas67_2.1 := gvl.Puesto71_actuador;
+
+
+TerminalValvulas89.0 := gvl.Puesto81_stoper;
+TerminalValvulas89.1 := gvl.Puesto82_stoper;
+TerminalValvulas89.2 := gvl.Puesto91_stoper;
+TerminalValvulas89.3 := gvl.Puesto92_stoper;
+TerminalValvulas89.4 := gvl.Puesto81_centrador;
+TerminalValvulas89.5 := gvl.Puesto82_centrador;
+TerminalValvulas89.6 := gvl.Puesto91_centrador;
+TerminalValvulas89.7 := gvl.Puesto92_centrador;
+
+/// Variables para el HMI
+Semaforo.0 := gvl.SemaforoRojo;
+Semaforo.1 := gvl.SemaforoAmarillo;
+Semaforo.2 := gvl.SemaforoVerde;
+
+ EstadoPuestos.0 := GVL.ElevadorInicioLinea.Ready;
+ EstadoPuestos.1 := GVL.Puesto11.FinPuesto;
+ EstadoPuestos.2 := GVL.Puesto12.FinPuesto;
+ EstadoPuestos.3 := GVL.Puesto21.FinPuesto;
+ EstadoPuestos.4 := GVL.Puesto22.FinPuesto ;
+ EstadoPuestos.5 := GVL.Puesto31.FinPuesto;
+ EstadoPuestos.6 := GVL.Puesto32.FinPuesto;
+ EstadoPuestos.7 := GVL.Puesto41.FinPuesto;
+ EstadoPuestos.8 := GVL.Puesto42.FinPuesto ;
+ EstadoPuestos.9 := GVL.Puesto51.FinPuesto ;
+ EstadoPuestos.10 := GVL.Puesto52.FinPuesto ;
+ EstadoPuestos.11 := GVL.Puesto61.FinPuesto ;
+ EstadoPuestos.12 := GVL.Puesto62.FinPuesto ;
+ EstadoPuestos.13 := GVL.Puesto71.FinPuesto ;
+ EstadoPuestos.14 := GVL.Puesto72.FinPuesto ;
+ EstadoPuestos.15 := GVL.Puesto81.FinPuesto ;
+ EstadoPuestos.16 := GVL.Puesto82.FinPuesto ;
+ EstadoPuestos.17 := GVL.Puesto91.FinPuesto ;
+ EstadoPuestos.18 := GVL.Puesto92.FinPuesto ;
+ EstadoPuestos.19 := GVL.ElevadorFinLinea.Ready;
+ 
+ 
+	
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="8" Count="0" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="459" Count="0" />
+      <LineId Id="458" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="211" Count="0" />
+      <LineId Id="110" Count="2" />
+      <LineId Id="290" Count="0" />
+      <LineId Id="172" Count="0" />
+      <LineId Id="113" Count="6" />
+      <LineId Id="173" Count="0" />
+      <LineId Id="120" Count="6" />
+      <LineId Id="174" Count="0" />
+      <LineId Id="127" Count="6" />
+      <LineId Id="175" Count="0" />
+      <LineId Id="134" Count="6" />
+      <LineId Id="176" Count="0" />
+      <LineId Id="141" Count="6" />
+      <LineId Id="177" Count="0" />
+      <LineId Id="148" Count="0" />
+      <LineId Id="178" Count="2" />
+      <LineId Id="593" Count="1" />
+      <LineId Id="617" Count="1" />
+      <LineId Id="620" Count="0" />
+      <LineId Id="623" Count="0" />
+      <LineId Id="598" Count="2" />
+      <LineId Id="596" Count="0" />
+      <LineId Id="595" Count="0" />
+      <LineId Id="577" Count="1" />
+      <LineId Id="405" Count="1" />
+      <LineId Id="426" Count="0" />
+      <LineId Id="403" Count="0" />
+      <LineId Id="424" Count="1" />
+      <LineId Id="443" Count="0" />
+      <LineId Id="439" Count="0" />
+      <LineId Id="155" Count="2" />
+      <LineId Id="446" Count="0" />
+      <LineId Id="158" Count="0" />
+      <LineId Id="436" Count="0" />
+      <LineId Id="159" Count="2" />
+      <LineId Id="337" Count="0" />
+      <LineId Id="162" Count="4" />
+      <LineId Id="348" Count="3" />
+      <LineId Id="353" Count="0" />
+      <LineId Id="379" Count="0" />
+      <LineId Id="388" Count="1" />
+      <LineId Id="380" Count="7" />
+      <LineId Id="378" Count="0" />
+      <LineId Id="362" Count="2" />
+      <LineId Id="367" Count="0" />
+      <LineId Id="392" Count="0" />
+      <LineId Id="365" Count="0" />
+      <LineId Id="372" Count="0" />
+      <LineId Id="377" Count="0" />
+      <LineId Id="393" Count="0" />
+      <LineId Id="361" Count="0" />
+      <LineId Id="354" Count="0" />
+      <LineId Id="358" Count="2" />
+      <LineId Id="355" Count="0" />
+      <LineId Id="390" Count="0" />
+      <LineId Id="334" Count="2" />
+      <LineId Id="331" Count="0" />
+      <LineId Id="247" Count="2" />
+      <LineId Id="257" Count="0" />
+      <LineId Id="302" Count="0" />
+      <LineId Id="304" Count="0" />
+      <LineId Id="270" Count="0" />
+      <LineId Id="258" Count="0" />
+      <LineId Id="262" Count="1" />
+      <LineId Id="244" Count="0" />
+      <LineId Id="306" Count="0" />
+      <LineId Id="305" Count="0" />
+      <LineId Id="311" Count="0" />
+      <LineId Id="310" Count="0" />
+      <LineId Id="269" Count="0" />
+      <LineId Id="266" Count="2" />
+      <LineId Id="245" Count="0" />
+      <LineId Id="320" Count="2" />
+      <LineId Id="307" Count="0" />
+      <LineId Id="246" Count="0" />
+      <LineId Id="271" Count="2" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="317" Count="2" />
+      <LineId Id="316" Count="0" />
+      <LineId Id="417" Count="0" />
+      <LineId Id="621" Count="0" />
+      <LineId Id="418" Count="0" />
+      <LineId Id="275" Count="3" />
+      <LineId Id="274" Count="0" />
+      <LineId Id="312" Count="3" />
+      <LineId Id="476" Count="4" />
+      <LineId Id="556" Count="0" />
+      <LineId Id="487" Count="0" />
+      <LineId Id="540" Count="4" />
+      <LineId Id="560" Count="1" />
+      <LineId Id="547" Count="8" />
+      <LineId Id="533" Count="0" />
+      <LineId Id="558" Count="1" />
+      <LineId Id="562" Count="0" />
+      <LineId Id="557" Count="0" />
+      <LineId Id="534" Count="0" />
+      <LineId Id="293" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

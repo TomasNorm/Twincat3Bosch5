@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <GVL Name="GVL" Id="{517a8359-9219-4518-a43e-83075b2b793a}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	
+	
+	SeguridadOK :BOOL;
+	ModoRun: BOOL;
+	ModoAutomatico :BOOL;
+	ModoDobleCarga :BOOL := FALSE;
+	
+	SemaforoRojo AT %Q* :BOOL;
+	SemaforoAmarillo AT %Q* :BOOL;
+	SemaforoVerde AT %Q* :BOOL;
+	
+	FinTiempo :BOOL;
+	FinCiclo:BOOL;
+	
+	TiempoDeCiclo: INT := 20;   //segundos de tiempo de ciclo
+	VelocidadCinta: UINT := 50; //Velocidad motores cinta en hercios
+
+	FalloPallet: ARRAY[1..18] OF BOOL;
+
+	HoraActual :DT;
+	fbLocalTime     : FB_LocalSystemTime;
+
+	
+	
+	
+	TerminalValvulas1 AT %Q*: USINT;
+	TerminalValvulas23 AT %Q* : USINT;
+	TerminalValvulas45 AT %Q*: USINT;
+	TerminalValvulas67 AT %Q* : USINT;
+	TerminalValvulas67_2 AT %Q* : USINT;
+	TerminalValvulas89 AT %Q* : USINT;
+			
+	
+	Puesto11_Centrador AT %Q* :BOOL;
+	Puesto11_stoper AT %Q*:BOOL;
+	Puesto12_centrador AT %Q*: BOOL; 
+	Puesto12_stoper AT %Q*:BOOL;
+	Puesto21_centrador AT %Q*: BOOL; 
+	Puesto21_stoper AT %Q*:BOOL;
+	Puesto22_centrador AT %Q*: BOOL; 
+	Puesto22_stoper AT %Q*:BOOL;
+	Puesto31_centrador AT %Q*: BOOL; 
+	Puesto31_stoper AT %Q*:BOOL;
+	Puesto32_centrador AT %Q*: BOOL; 
+	Puesto32_stoper AT %Q*:BOOL;
+	Puesto41_centrador AT %Q*: BOOL; 
+	Puesto41_stoper AT %Q*:BOOL;
+	Puesto42_centrador AT %Q*: BOOL; 
+	Puesto42_stoper AT %Q*:BOOL;
+	Puesto51_centrador AT %Q*: BOOL; 
+	Puesto51_stoper AT %Q*:BOOL;
+	Puesto52_centrador AT %Q*: BOOL; 
+	Puesto52_stoper AT %Q*:BOOL;
+	Puesto61_centrador AT %Q*: BOOL; 
+	Puesto61_stoper AT %Q*:BOOL;
+	Puesto62_centrador AT %Q*: BOOL; 
+	Puesto62_stoper AT %Q*:BOOL;
+	Puesto71_centrador AT %Q*: BOOL; 
+	Puesto71_stoper AT %Q*:BOOL;
+	Puesto72_centrador AT %Q*: BOOL; 
+	Puesto72_stoper AT %Q*:BOOL;
+	Puesto81_centrador AT %Q*: BOOL; 
+	Puesto81_stoper AT %Q*:BOOL;
+	Puesto82_centrador AT %Q*: BOOL; 
+	Puesto82_stoper AT %Q*:BOOL;
+	Puesto91_centrador AT %Q*: BOOL; 
+	Puesto91_stoper AT %Q*:BOOL;
+	Puesto92_centrador AT %Q*: BOOL; 
+	Puesto92_stoper AT %Q*:BOOL;
+	
+	Puesto71_Actuador AT %Q* :BOOL;
+	Puesto72_Actuador AT %Q* :BOOL;
+	Puesto72_LuzVerde AT %Q* :BOOL;
+	
+
+	
+	Puesto11_Presencia AT %I* :BOOL;
+	Puesto12_Presencia AT %I* :BOOL;
+	Puesto21_Presencia AT %I* :BOOL;
+	Puesto22_Presencia AT %I* :BOOL;
+	Puesto31_Presencia AT %I* :BOOL;
+	Puesto32_Presencia AT %I* :BOOL;
+	Puesto41_Presencia AT %I* :BOOL;
+	Puesto42_Presencia AT %I* :BOOL;
+	Puesto51_Presencia AT %I* :BOOL;
+	Puesto52_Presencia AT %I* :BOOL;
+	Puesto61_Presencia AT %I* :BOOL;
+	Puesto62_Presencia AT %I* :BOOL;
+	Puesto71_Presencia AT %I* :BOOL;
+	Puesto72_Presencia AT %I* :BOOL;
+	Puesto81_Presencia AT %I* :BOOL;
+	Puesto82_Presencia AT %I* :BOOL;
+	Puesto91_Presencia AT %I* :BOOL;
+	Puesto92_Presencia AT %I* :BOOL;
+	
+	Puesto61_Bypass AT %I* :BOOL;
+	Puesto71_Pulsador AT %I* :BOOL;
+	Puesto71_Bypass AT %I* :BOOL;
+	Puesto72_PresenciaPieza AT %I* :BOOL;
+	Puesto81_Pulsador AT %I* :BOOL;
+
+	Elevadorinicio1_Presencia AT %I* :BOOL;
+	Elevadorinicio2_Presencia AT %I* :BOOL;
+	Elevadorfin1_Presencia AT %I* :BOOL;
+	Elevadorfin2_Presencia AT %I* :BOOL;
+
+	
+	Puesto11: PuestoManual;
+    Puesto12: PuestoManual;
+    Puesto21: PuestoManual;
+    Puesto22: PuestoManual;
+    Puesto31: PuestoManual;
+	Puesto32: PuestoManual;
+    Puesto41: PuestoManual;
+	Puesto42: PuestoManual;
+    Puesto51: PuestoManual;
+	Puesto52: PuestoManual;
+    Puesto61: PuestoManual;
+	Puesto62: PuestoManual;
+    Puesto71: PuestoCupula;
+	Puesto72: PuestoAutomatico;
+    Puesto81: PuestoManual;
+	Puesto82: PuestoManual;
+    Puesto91: PuestoManual;
+	Puesto92: PuestoManualV2;
+	
+
+	
+
+	ElevadorFinLinea: ControlDescensoFin;
+	ElevadorInicioLinea: ControlElevadorInicio;
+	
+END_VAR
+
+VAR_GLOBAL PERSISTENT
+	Producto : STRING[30] := 'SINDEFINIR';
+	Est_Resultados : ARRAY[1..3000] OF ResultadoCiclo;
+	PunteroEst: INT := 1;
+END_VAR
+]]></Declaration>
+  </GVL>
+</TcPlcObject>

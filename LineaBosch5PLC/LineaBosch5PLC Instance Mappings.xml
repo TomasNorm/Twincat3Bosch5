@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<VarLinks>
+	<OwnerA Name="InputDst" Prefix="TIPC^LineaBosch5PLC^LineaBosch5PLC Instance" Type="1">
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^CabeceraPLC^Term 2 (EL1809)">
+			<Link VarA="GVL.ElevadorFinLinea.PresenciaCintaAbajo" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 6^Input" Size="1"/>
+			<Link VarA="GVL.ElevadorFinLinea.PresenciaCintaArriba" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 7^Input" Size="1"/>
+			<Link VarA="GVL.ElevadorFinLinea.PulsadorBajar" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" Size="1"/>
+			<Link VarA="GVL.ElevadorFinLinea.PulsadorSubir" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1"/>
+			<Link VarA="GVL.ElevadorFinLinea.SensorAbajo" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 9^Input" Size="1"/>
+			<Link VarA="GVL.ElevadorFinLinea.SensorArriba" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 8^Input" Size="1"/>
+			<Link VarA="GVL.Elevadorfin1_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 12^Input" Size="1"/>
+			<Link VarA="GVL.Elevadorfin2_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 14^Input" Size="1"/>
+			<Link VarA="MAIN.ControlSeguridad.CuadroPrincipalAutomatico" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1"/>
+			<Link VarA="MAIN.ControlSeguridad.CuadroPrincipalRunStop" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1"/>
+			<Link VarA="MAIN.ControlSeguridad.SeguridadSetas" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 5^Input" Size="1"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^Terminal1^Term 26 (EL1809)">
+			<Link VarA="GVL.ElevadorInicioLinea.PresenciaCintaAbajo" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 10^Input" Size="1"/>
+			<Link VarA="GVL.ElevadorInicioLinea.PresenciaCintaArriba" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 9^Input" Size="1"/>
+			<Link VarA="GVL.ElevadorInicioLinea.PulsadorBajar" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1"/>
+			<Link VarA="GVL.ElevadorInicioLinea.PulsadorSubir" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1"/>
+			<Link VarA="GVL.ElevadorInicioLinea.SensorAbajo" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" Size="1"/>
+			<Link VarA="GVL.ElevadorInicioLinea.SensorArriba" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1"/>
+			<Link VarA="GVL.ElevadorInicioLinea.SensorPaletEnEspera" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 7^Input" Size="1"/>
+			<Link VarA="GVL.Elevadorinicio1_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 6^Input" Size="1"/>
+			<Link VarA="GVL.Elevadorinicio2_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 8^Input" Size="1"/>
+			<Link VarA="GVL.Puesto11_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 11^Input" Size="1"/>
+			<Link VarA="GVL.Puesto12_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 13^Input" Size="1"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^Terminal45^Term 17 (EL1809)">
+			<Link VarA="GVL.Puesto41_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1"/>
+			<Link VarA="GVL.Puesto42_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" Size="1"/>
+			<Link VarA="GVL.Puesto51_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 11^Input" Size="1"/>
+			<Link VarA="GVL.Puesto52_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 12^Input" Size="1"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^Terminal67^Term 13 (EL1809)">
+			<Link VarA="GVL.Puesto61_Bypass" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 5^Input" Size="1"/>
+			<Link VarA="GVL.Puesto61_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1"/>
+			<Link VarA="GVL.Puesto62_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" Size="1"/>
+			<Link VarA="GVL.Puesto71.SensorCupulaAtras" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 6^Input" Size="1"/>
+			<Link VarA="GVL.Puesto71_Bypass" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 9^Input" Size="1"/>
+			<Link VarA="GVL.Puesto71_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 11^Input" Size="1"/>
+			<Link VarA="GVL.Puesto71_Pulsador" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 10^Input" Size="1"/>
+			<Link VarA="GVL.Puesto72.Fail" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 13^Input" Size="1"/>
+			<Link VarA="GVL.Puesto72.Pass" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 14^Input" Size="1"/>
+			<Link VarA="GVL.Puesto72.SelectorByPass" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 15^Input" Size="1"/>
+			<Link VarA="GVL.Puesto72_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 12^Input" Size="1"/>
+			<Link VarA="GVL.Puesto72_PresenciaPieza" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 16^Input" Size="1"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^Terminal89^Term 9 (EL1809)">
+			<Link VarA="GVL.Puesto81_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1"/>
+			<Link VarA="GVL.Puesto81_Pulsador" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 5^Input" Size="1"/>
+			<Link VarA="GVL.Puesto82_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" Size="1"/>
+			<Link VarA="GVL.Puesto91_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 12^Input" Size="1"/>
+			<Link VarA="GVL.Puesto92_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 11^Input" Size="1"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^Terminales23^Term 21 (EL1809)">
+			<Link VarA="GVL.Puesto21_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1"/>
+			<Link VarA="GVL.Puesto22_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" Size="1"/>
+			<Link VarA="GVL.Puesto31_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 11^Input" Size="1"/>
+			<Link VarA="GVL.Puesto32_Presencia" GrpA="PlcTask Inputs" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 12^Input" Size="1"/>
+		</OwnerB>
+	</OwnerA>
+	<OwnerA Name="OutputSrc" Prefix="TIPC^LineaBosch5PLC^LineaBosch5PLC Instance" Type="2">
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^CabeceraPLC^Term 3 (EL2809)">
+			<Link VarA="GVL.SemaforoAmarillo" GrpA="PlcTask Outputs" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 14^Output" Size="1"/>
+			<Link VarA="GVL.SemaforoRojo" GrpA="PlcTask Outputs" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 15^Output" Size="1"/>
+			<Link VarA="GVL.SemaforoVerde" GrpA="PlcTask Outputs" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 16^Output" Size="1"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^CintaLineaInferior">
+			<Link VarA="MAIN.ControlSeguridad.MotorInferior_Command" GrpA="PlcTask Outputs" TypeA="INT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000006}" VarB="RxPDO5^Control Word"/>
+			<Link VarA="MAIN.ControlSeguridad.MotorInferior_Freq" GrpA="PlcTask Outputs" TypeA="UINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="RxPDO5^Frequency Command"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^CintaLineaSuperior">
+			<Link VarA="MAIN.ControlSeguridad.MotorSuperior_Command" GrpA="PlcTask Outputs" TypeA="INT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000006}" VarB="RxPDO5^Control Word"/>
+			<Link VarA="MAIN.ControlSeguridad.MotorSuperior_Freq" GrpA="PlcTask Outputs" TypeA="UINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="RxPDO5^Frequency Command"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^FinLineaVertical">
+			<Link VarA="GVL.ElevadorFinLinea.MotorElevacion_Command" GrpA="PlcTask Outputs" TypeA="UINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="RxPDO5^Control Word"/>
+			<Link VarA="GVL.ElevadorFinLinea.MotorElevacion_Freq" GrpA="PlcTask Outputs" TypeA="UINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="RxPDO5^Frequency Command"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^FinlineaCinta">
+			<Link VarA="GVL.ElevadorFinLinea.MotorExtraccion_Command" GrpA="PlcTask Outputs" TypeA="UINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="RxPDO5^Control Word"/>
+			<Link VarA="GVL.ElevadorFinLinea.MotorExtraccion_Freq" GrpA="PlcTask Outputs" TypeA="UINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="RxPDO5^Frequency Command"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^InicioLineaCinta">
+			<Link VarA="GVL.ElevadorInicioLinea.MotorExtraccion_Command" GrpA="PlcTask Outputs" TypeA="INT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000006}" VarB="RxPDO5^Control Word"/>
+			<Link VarA="GVL.ElevadorInicioLinea.MotorExtraccion_Freq" GrpA="PlcTask Outputs" TypeA="UINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="RxPDO5^Frequency Command"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^InicioLineaVertical">
+			<Link VarA="GVL.ElevadorInicioLinea.MotorElevacion_Command" GrpA="PlcTask Outputs" TypeA="INT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000006}" VarB="RxPDO5^Control Word"/>
+			<Link VarA="GVL.ElevadorInicioLinea.MotorElevacion_Freq" GrpA="PlcTask Outputs" TypeA="UINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="RxPDO5^Frequency Command"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^Terminal67^Term 14 (EL2809)">
+			<Link VarA="GVL.Puesto71.CupulaAdelante" GrpA="PlcTask Outputs" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 12^Output" Size="1"/>
+			<Link VarA="GVL.Puesto71.CupulaAtras" GrpA="PlcTask Outputs" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 11^Output" Size="1"/>
+			<Link VarA="GVL.Puesto72.Ready" GrpA="PlcTask Outputs" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 9^Output" Size="1"/>
+			<Link VarA="GVL.Puesto72_Actuador" GrpA="PlcTask Outputs" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 10^Output" Size="1"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^Terminal89^Term 10 (EL2809)">
+			<Link VarA="GVL.Puesto81.LuzRoja" GrpA="PlcTask Outputs" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Output" Size="1"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^Valvulas1">
+			<Link VarA="GVL.TerminalValvulas1" GrpA="PlcTask Outputs" TypeA="USINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000002}" VarB="Byte 0^Output"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^Valvulas23">
+			<Link VarA="GVL.TerminalValvulas23" GrpA="PlcTask Outputs" TypeA="USINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000002}" VarB="Byte 0^Output"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^Valvulas45">
+			<Link VarA="GVL.TerminalValvulas45" GrpA="PlcTask Outputs" TypeA="USINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000002}" VarB="Byte 0^Output"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^Valvulas67">
+			<Link VarA="GVL.TerminalValvulas67" GrpA="PlcTask Outputs" TypeA="USINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000002}" VarB="Byte 0^Output"/>
+			<Link VarA="GVL.TerminalValvulas67_2" GrpA="PlcTask Outputs" TypeA="USINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000002}" VarB="Byte 1^Output"/>
+		</OwnerB>
+		<OwnerB Name="TIID^Device 1 (EtherCAT)^Valvulas89">
+			<Link VarA="GVL.TerminalValvulas89" GrpA="PlcTask Outputs" TypeA="USINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000002}" VarB="Byte 0^Output"/>
+		</OwnerB>
+	</OwnerA>
+</VarLinks>
