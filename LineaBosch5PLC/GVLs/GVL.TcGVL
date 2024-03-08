@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <GVL Name="GVL" Id="{517a8359-9219-4518-a43e-83075b2b793a}">
     <Declaration><![CDATA[VAR_GLOBAL
 	
@@ -138,7 +138,7 @@ END_VAR
 
 VAR_GLOBAL PERSISTENT
 	Producto : STRING[30] := 'SINDEFINIR';
-	Est_Resultados : ARRAY[1..3000] OF ResultadoCiclo;
+	Est_Resultados : ARRAY[1..2000] OF ResultadoCiclo;
 	PunteroEst: INT := 1;
 END_VAR
 ]]></Declaration>

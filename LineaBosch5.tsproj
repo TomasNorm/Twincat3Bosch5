@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.7">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.42">
 	<ImageDatas>
 		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffff00ffff00ff808080808080808080808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
 		<ImageData Id="1001">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000120b0000120b00000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
@@ -22,23 +22,11 @@
 		</System>
 		<Plc>
 			<Project GUID="{29CB7897-B4B6-43B5-9EF0-F7F596C949B4}" Name="LineaBosch5PLC" PrjFilePath="LineaBosch5PLC\LineaBosch5PLC.plcproj" TmcFilePath="LineaBosch5PLC\LineaBosch5PLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="LineaBosch5PLC\LineaBosch5PLC.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="LineaBosch5PLC\LineaBosch5PLC.tmc" TmcHash="{E287BF20-1F22-60BE-1B91-A3439B66F21F}">
 					<Name>LineaBosch5PLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
-						<Var>
-							<Name>MAIN.ControlSeguridad.CuadroPrincipalRunStop</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.ControlSeguridad.CuadroPrincipalAutomatico</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.ControlSeguridad.SeguridadSetas</Name>
-							<Type>BOOL</Type>
-						</Var>
 						<Var>
 							<Name>GVL.Puesto11_Presencia</Name>
 							<Type>BOOL</Type>
@@ -192,27 +180,7 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.Puesto71.Pulsador1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.Puesto71.SelectorByPass</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.Puesto71.Pass</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.Puesto71.Fail</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.Puesto71.SensorPieza1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.Puesto71.SensorPieza2</Name>
+							<Name>GVL.Puesto61_Bypass</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -351,33 +319,49 @@
 							<Name>GVL.ElevadorInicioLinea.PresenciaCintaAbajo</Name>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>MAIN.ControlSeguridad.CuadroPrincipalRunStop</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.ControlSeguridad.CuadroPrincipalAutomatico</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.ControlSeguridad.SeguridadSetas</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.Puesto71.Pulsador1</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.Puesto71.SelectorByPass</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.Puesto71.Pass</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.Puesto71.Fail</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.Puesto71.SensorPieza1</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.Puesto71.SensorPieza2</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.Puesto71.SensorCupulaAtras</Name>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
-					<Vars VarGrpType="2">
+					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
-						<Var>
-							<Name>MAIN.ControlSeguridad.CuadroLedVerde</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.ControlSeguridad.CuadroLedAmarillo</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.ControlSeguridad.MotorSuperior_Freq</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.ControlSeguridad.MotorSuperior_Command</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.ControlSeguridad.MotorInferior_Freq</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.ControlSeguridad.MotorInferior_Command</Name>
-							<Type>INT</Type>
-						</Var>
 						<Var>
 							<Name>GVL.SemaforoRojo</Name>
 							<Type>BOOL</Type>
@@ -715,26 +699,6 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.Puesto71.Ready</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.Puesto71.StopperOFF</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.Puesto71.Centrador</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.Puesto71.Actuador</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.Puesto71.LuzAmbar</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>GVL.Puesto72.Ready</Name>
 							<Type>BOOL</Type>
 						</Var>
@@ -834,6 +798,58 @@
 							<Name>GVL.ElevadorInicioLinea.StopperOFF</Name>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>MAIN.ControlSeguridad.CuadroLedVerde</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.ControlSeguridad.CuadroLedAmarillo</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.ControlSeguridad.MotorSuperior_Freq</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.ControlSeguridad.MotorSuperior_Command</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.ControlSeguridad.MotorInferior_Freq</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.ControlSeguridad.MotorInferior_Command</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL.Puesto71.Ready</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.Puesto71.StopperOFF</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.Puesto71.Centrador</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.Puesto71.Actuador</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.Puesto71.LuzAmbar</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.Puesto71.CupulaAdelante</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.Puesto71.CupulaAtras</Name>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
 					<UnrestoredVarLinks ImportTime="2022-08-11T14:52:26">
 						<OwnerA Name="InputDst" Prefix="TIPC^LineaBosch5PLC^LineaBosch5PLC Instance" Type="1">
@@ -880,6 +896,17 @@
 							</OwnerB>
 						</OwnerA>
 					</UnrestoredVarLinks>
+					<Contexts>
+						<Context>
+							<Id NeedCalleeCall="true">0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010040</OTCID>
+							</ManualConfig>
+							<Priority>21</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
 					<TaskPouOids>
 						<TaskPouOid Prio="21" OTCID="#x08502001"/>
 					</TaskPouOids>
@@ -887,7 +914,7 @@
 			</Project>
 		</Plc>
 		<Io>
-			<Device Id="1" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="5.97.60.79.2.1" RemoteName="Dispositivo 1 (EtherCAT)">
+			<Device Id="1" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="5.97.60.79.2.1" RemoteName="Dispositivo 1 (EtherCAT)" InfoImageId="2">
 				<Name>Dispositivo 1 (EtherCAT)</Name>
 				<AddressInfo>
 					<Ccat>
@@ -2350,7 +2377,7 @@
 				</Image>
 				<DpRam/>
 			</Device>
-			<Device Id="6" DevType="138" AmsPort="28678" AmsNetId="5.97.60.79.7.1" RemoteName="Dispositivo 6 (RT-Ethernet Protocol)">
+			<Device Id="6" Disabled="true" DevType="138" AmsPort="28678" AmsNetId="5.97.60.79.7.1" RemoteName="Dispositivo 6 (RT-Ethernet Protocol)">
 				<Name>Dispositivo 6 (RT-Ethernet Protocol)</Name>
 				<AddressInfo>
 					<Pnp>
