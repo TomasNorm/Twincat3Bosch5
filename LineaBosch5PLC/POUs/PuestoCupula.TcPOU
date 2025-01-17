@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="PuestoCupula" Id="{d132c2f5-cd59-48fc-a5f1-6f8931e79e9d}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK PuestoCupula
 VAR_INPUT
@@ -18,7 +18,7 @@ VAR_INPUT
 	SensorPieza2 AT %I*:BOOL;
 	
 	SensorCupulaAtras AT%I*:BOOL;
-
+	SensorCupulaAdelante AT%I*:BOOL;
 END_VAR
 VAR_OUTPUT
 	
@@ -1709,7 +1709,7 @@ END_VAR
                                                 <o>
                                                   <v n="AttributeId">{cacf1a68-236e-47c2-b7b1-1cf9199718cb}</v>
                                                   <o n="Value" t="StringValue">
-                                                    <v n="Value">"T#5s"</v>
+                                                    <v n="Value">"T#3s"</v>
                                                     <v n="DefaultValue">""</v>
                                                   </o>
                                                   <v n="Id">799L</v>
@@ -2053,7 +2053,7 @@ END_VAR
                                                 <o>
                                                   <v n="AttributeId">{38391c6d-6d4a-42f8-8ee7-9f45e5adafa8}</v>
                                                   <o n="Value" t="StringValue">
-                                                    <v n="Value">"True"</v>
+                                                    <v n="Value">"Pass Or Fail Or SelectorByPass"</v>
                                                     <v n="DefaultValue">""</v>
                                                   </o>
                                                   <v n="Id">608L</v>
@@ -3761,14 +3761,6 @@ END_VAR
                 <v n="IdParent">-1L</v>
               </o>
               <d2 n="Categories" ckt="Guid" cvt="SFCAttributeCategory">
-                <v>6f37ae05-4d8f-4ddc-9e69-c0e6bd6962c2</v>
-                <o>
-                  <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
-                  <v n="Id">{6f37ae05-4d8f-4ddc-9e69-c0e6bd6962c2}</v>
-                  <v n="Identifier">"Common"</v>
-                  <v n="Parent">{00000000-0000-0000-0000-000000000000}</v>
-                  <v n="Description">"Common properties"</v>
-                </o>
                 <v>1c5c6e05-2bb7-4258-bcee-fd16a540c63c</v>
                 <o>
                   <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
@@ -3776,14 +3768,6 @@ END_VAR
                   <v n="Identifier">"Specific"</v>
                   <v n="Parent">{00000000-0000-0000-0000-000000000000}</v>
                   <v n="Description">"Element type specific properties"</v>
-                </o>
-                <v>d336ba06-8a67-4e6b-9697-50f83ba6bdde</v>
-                <o>
-                  <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
-                  <v n="Id">{d336ba06-8a67-4e6b-9697-50f83ba6bdde}</v>
-                  <v n="Identifier">"Times"</v>
-                  <v n="Parent">{1c5c6e05-2bb7-4258-bcee-fd16a540c63c}</v>
-                  <v n="Description">"Time definitions"</v>
                 </o>
                 <v>20f0fc67-978d-438b-979f-eef294f34ee4</v>
                 <o>
@@ -3793,32 +3777,24 @@ END_VAR
                   <v n="Parent">{1c5c6e05-2bb7-4258-bcee-fd16a540c63c}</v>
                   <v n="Description">"Action definitions"</v>
                 </o>
+                <v>6f37ae05-4d8f-4ddc-9e69-c0e6bd6962c2</v>
+                <o>
+                  <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
+                  <v n="Id">{6f37ae05-4d8f-4ddc-9e69-c0e6bd6962c2}</v>
+                  <v n="Identifier">"Common"</v>
+                  <v n="Parent">{00000000-0000-0000-0000-000000000000}</v>
+                  <v n="Description">"Common properties"</v>
+                </o>
+                <v>d336ba06-8a67-4e6b-9697-50f83ba6bdde</v>
+                <o>
+                  <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
+                  <v n="Id">{d336ba06-8a67-4e6b-9697-50f83ba6bdde}</v>
+                  <v n="Identifier">"Times"</v>
+                  <v n="Parent">{1c5c6e05-2bb7-4258-bcee-fd16a540c63c}</v>
+                  <v n="Description">"Time definitions"</v>
+                </o>
               </d2>
               <d2 n="Attributes" ckt="Guid" cvt="SFCAttributeDescription">
-                <v>38391c6d-6d4a-42f8-8ee7-9f45e5adafa8</v>
-                <o>
-                  <v n="ReadOnly">false</v>
-                  <v n="Hidden">false</v>
-                  <v n="EditorVisibility">false</v>
-                  <v n="MultiLineEdit">false</v>
-                  <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
-                  <v n="Id">{38391c6d-6d4a-42f8-8ee7-9f45e5adafa8}</v>
-                  <v n="Identifier">"Name"</v>
-                  <v n="Parent">{6f37ae05-4d8f-4ddc-9e69-c0e6bd6962c2}</v>
-                  <v n="Description">"Name of the element"</v>
-                </o>
-                <v>7d894980-aeea-405c-a0f6-e2b26429c58f</v>
-                <o>
-                  <v n="ReadOnly">false</v>
-                  <v n="Hidden">false</v>
-                  <v n="EditorVisibility">true</v>
-                  <v n="MultiLineEdit">true</v>
-                  <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
-                  <v n="Id">{7d894980-aeea-405c-a0f6-e2b26429c58f}</v>
-                  <v n="Identifier">"Comment"</v>
-                  <v n="Parent">{6f37ae05-4d8f-4ddc-9e69-c0e6bd6962c2}</v>
-                  <v n="Description">"Comment of the element"</v>
-                </o>
                 <v>01580b27-6378-448b-8ecb-0e4b795b58d6</v>
                 <o>
                   <v n="ReadOnly">false</v>
@@ -3830,42 +3806,6 @@ END_VAR
                   <v n="Identifier">"Exclude"</v>
                   <v n="Parent">{6f37ae05-4d8f-4ddc-9e69-c0e6bd6962c2}</v>
                   <v n="Description">"Exclude this element from build"</v>
-                </o>
-                <v>bc882c11-1e91-4dd8-a6b8-2075724ed18b</v>
-                <o>
-                  <v n="ReadOnly">false</v>
-                  <v n="Hidden">false</v>
-                  <v n="EditorVisibility">true</v>
-                  <v n="MultiLineEdit">false</v>
-                  <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
-                  <v n="Id">{bc882c11-1e91-4dd8-a6b8-2075724ed18b}</v>
-                  <v n="Identifier">"Symbol"</v>
-                  <v n="Parent">{6f37ae05-4d8f-4ddc-9e69-c0e6bd6962c2}</v>
-                  <v n="Description">"Symbol configuration setting of the element"</v>
-                </o>
-                <v>e174fc0d-80b0-4a9e-a530-ca239c249a50</v>
-                <o>
-                  <v n="ReadOnly">false</v>
-                  <v n="Hidden">false</v>
-                  <v n="EditorVisibility">false</v>
-                  <v n="MultiLineEdit">false</v>
-                  <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
-                  <v n="Id">{e174fc0d-80b0-4a9e-a530-ca239c249a50}</v>
-                  <v n="Identifier">"Qualifier"</v>
-                  <v n="Parent">{1c5c6e05-2bb7-4258-bcee-fd16a540c63c}</v>
-                  <v n="Description">"Qualifier of the action association"</v>
-                </o>
-                <v>6844a48e-46c2-4cc8-a185-a478f3b99cc0</v>
-                <o>
-                  <v n="ReadOnly">false</v>
-                  <v n="Hidden">false</v>
-                  <v n="EditorVisibility">false</v>
-                  <v n="MultiLineEdit">false</v>
-                  <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
-                  <v n="Id">{6844a48e-46c2-4cc8-a185-a478f3b99cc0}</v>
-                  <v n="Identifier">"InitStep"</v>
-                  <v n="Parent">{1c5c6e05-2bb7-4258-bcee-fd16a540c63c}</v>
-                  <v n="Description">"Sets the step as the initial step"</v>
                 </o>
                 <v>23bdaa98-72ec-41f7-817b-9dede5697086</v>
                 <o>
@@ -3879,29 +3819,17 @@ END_VAR
                   <v n="Parent">{1c5c6e05-2bb7-4258-bcee-fd16a540c63c}</v>
                   <v n="Description">"Sets the branch to parallel mode"</v>
                 </o>
-                <v>cacf1a68-236e-47c2-b7b1-1cf9199718cb</v>
+                <v>38391c6d-6d4a-42f8-8ee7-9f45e5adafa8</v>
                 <o>
                   <v n="ReadOnly">false</v>
                   <v n="Hidden">false</v>
-                  <v n="EditorVisibility">true</v>
+                  <v n="EditorVisibility">false</v>
                   <v n="MultiLineEdit">false</v>
                   <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
-                  <v n="Id">{cacf1a68-236e-47c2-b7b1-1cf9199718cb}</v>
-                  <v n="Identifier">"MinTime"</v>
-                  <v n="Parent">{d336ba06-8a67-4e6b-9697-50f83ba6bdde}</v>
-                  <v n="Description">"Defines the minimal active time for the step"</v>
-                </o>
-                <v>b693554c-1b01-4a8d-afde-9e3a46f7465d</v>
-                <o>
-                  <v n="ReadOnly">false</v>
-                  <v n="Hidden">false</v>
-                  <v n="EditorVisibility">true</v>
-                  <v n="MultiLineEdit">false</v>
-                  <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
-                  <v n="Id">{b693554c-1b01-4a8d-afde-9e3a46f7465d}</v>
-                  <v n="Identifier">"MaxTime"</v>
-                  <v n="Parent">{d336ba06-8a67-4e6b-9697-50f83ba6bdde}</v>
-                  <v n="Description">"Defines the maximal active time for the step"</v>
+                  <v n="Id">{38391c6d-6d4a-42f8-8ee7-9f45e5adafa8}</v>
+                  <v n="Identifier">"Name"</v>
+                  <v n="Parent">{6f37ae05-4d8f-4ddc-9e69-c0e6bd6962c2}</v>
+                  <v n="Description">"Name of the element"</v>
                 </o>
                 <v>62e1754b-7629-4e63-9cec-10ae0c536f1f</v>
                 <o>
@@ -3915,17 +3843,17 @@ END_VAR
                   <v n="Parent">{1c5c6e05-2bb7-4258-bcee-fd16a540c63c}</v>
                   <v n="Description">"Copies the implementation of step actions or transitions with the element. Otherwise, copies the reference to an existing implementation."</v>
                 </o>
-                <v>8294df19-5962-4dee-a874-1051dabb0e3e</v>
+                <v>6844a48e-46c2-4cc8-a185-a478f3b99cc0</v>
                 <o>
                   <v n="ReadOnly">false</v>
                   <v n="Hidden">false</v>
                   <v n="EditorVisibility">false</v>
                   <v n="MultiLineEdit">false</v>
                   <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
-                  <v n="Id">{8294df19-5962-4dee-a874-1051dabb0e3e}</v>
-                  <v n="Identifier">"Monitoring"</v>
+                  <v n="Id">{6844a48e-46c2-4cc8-a185-a478f3b99cc0}</v>
+                  <v n="Identifier">"InitStep"</v>
                   <v n="Parent">{1c5c6e05-2bb7-4258-bcee-fd16a540c63c}</v>
-                  <v n="Description">"Indicates transition monitoring setting."</v>
+                  <v n="Description">"Sets the step as the initial step"</v>
                 </o>
                 <v>700a583f-b4d4-43e4-8c14-629c7cd3bec8</v>
                 <o>
@@ -3939,17 +3867,29 @@ END_VAR
                   <v n="Parent">{20f0fc67-978d-438b-979f-eef294f34ee4}</v>
                   <v n="Description">"Name of the action to be called if the step is active"</v>
                 </o>
-                <v>a6b08bd8-b696-47e3-9cbf-7408b61c9ff8</v>
+                <v>7d894980-aeea-405c-a0f6-e2b26429c58f</v>
                 <o>
                   <v n="ReadOnly">false</v>
                   <v n="Hidden">false</v>
                   <v n="EditorVisibility">true</v>
+                  <v n="MultiLineEdit">true</v>
+                  <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
+                  <v n="Id">{7d894980-aeea-405c-a0f6-e2b26429c58f}</v>
+                  <v n="Identifier">"Comment"</v>
+                  <v n="Parent">{6f37ae05-4d8f-4ddc-9e69-c0e6bd6962c2}</v>
+                  <v n="Description">"Comment of the element"</v>
+                </o>
+                <v>8294df19-5962-4dee-a874-1051dabb0e3e</v>
+                <o>
+                  <v n="ReadOnly">false</v>
+                  <v n="Hidden">false</v>
+                  <v n="EditorVisibility">false</v>
                   <v n="MultiLineEdit">false</v>
                   <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
-                  <v n="Id">{a6b08bd8-b696-47e3-9cbf-7408b61c9ff8}</v>
-                  <v n="Identifier">"EntryAction"</v>
-                  <v n="Parent">{20f0fc67-978d-438b-979f-eef294f34ee4}</v>
-                  <v n="Description">"Name of the action to be called if the step is activated"</v>
+                  <v n="Id">{8294df19-5962-4dee-a874-1051dabb0e3e}</v>
+                  <v n="Identifier">"Monitoring"</v>
+                  <v n="Parent">{1c5c6e05-2bb7-4258-bcee-fd16a540c63c}</v>
+                  <v n="Description">"Indicates transition monitoring setting."</v>
                 </o>
                 <v>a2621e18-7de3-4ea6-ae6d-89e9e0b7befd</v>
                 <o>
@@ -3963,8 +3903,90 @@ END_VAR
                   <v n="Parent">{20f0fc67-978d-438b-979f-eef294f34ee4}</v>
                   <v n="Description">"Name of the action to be called if the step is deactivated"</v>
                 </o>
+                <v>a6b08bd8-b696-47e3-9cbf-7408b61c9ff8</v>
+                <o>
+                  <v n="ReadOnly">false</v>
+                  <v n="Hidden">false</v>
+                  <v n="EditorVisibility">true</v>
+                  <v n="MultiLineEdit">false</v>
+                  <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
+                  <v n="Id">{a6b08bd8-b696-47e3-9cbf-7408b61c9ff8}</v>
+                  <v n="Identifier">"EntryAction"</v>
+                  <v n="Parent">{20f0fc67-978d-438b-979f-eef294f34ee4}</v>
+                  <v n="Description">"Name of the action to be called if the step is activated"</v>
+                </o>
+                <v>b693554c-1b01-4a8d-afde-9e3a46f7465d</v>
+                <o>
+                  <v n="ReadOnly">false</v>
+                  <v n="Hidden">false</v>
+                  <v n="EditorVisibility">true</v>
+                  <v n="MultiLineEdit">false</v>
+                  <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
+                  <v n="Id">{b693554c-1b01-4a8d-afde-9e3a46f7465d}</v>
+                  <v n="Identifier">"MaxTime"</v>
+                  <v n="Parent">{d336ba06-8a67-4e6b-9697-50f83ba6bdde}</v>
+                  <v n="Description">"Defines the maximal active time for the step"</v>
+                </o>
+                <v>bc882c11-1e91-4dd8-a6b8-2075724ed18b</v>
+                <o>
+                  <v n="ReadOnly">false</v>
+                  <v n="Hidden">false</v>
+                  <v n="EditorVisibility">true</v>
+                  <v n="MultiLineEdit">false</v>
+                  <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
+                  <v n="Id">{bc882c11-1e91-4dd8-a6b8-2075724ed18b}</v>
+                  <v n="Identifier">"Symbol"</v>
+                  <v n="Parent">{6f37ae05-4d8f-4ddc-9e69-c0e6bd6962c2}</v>
+                  <v n="Description">"Symbol configuration setting of the element"</v>
+                </o>
+                <v>cacf1a68-236e-47c2-b7b1-1cf9199718cb</v>
+                <o>
+                  <v n="ReadOnly">false</v>
+                  <v n="Hidden">false</v>
+                  <v n="EditorVisibility">true</v>
+                  <v n="MultiLineEdit">false</v>
+                  <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
+                  <v n="Id">{cacf1a68-236e-47c2-b7b1-1cf9199718cb}</v>
+                  <v n="Identifier">"MinTime"</v>
+                  <v n="Parent">{d336ba06-8a67-4e6b-9697-50f83ba6bdde}</v>
+                  <v n="Description">"Defines the minimal active time for the step"</v>
+                </o>
+                <v>e174fc0d-80b0-4a9e-a530-ca239c249a50</v>
+                <o>
+                  <v n="ReadOnly">false</v>
+                  <v n="Hidden">false</v>
+                  <v n="EditorVisibility">false</v>
+                  <v n="MultiLineEdit">false</v>
+                  <v n="Factory">{11e03a9d-fc7b-4112-850c-ae33fb04a2b4}</v>
+                  <v n="Id">{e174fc0d-80b0-4a9e-a530-ca239c249a50}</v>
+                  <v n="Identifier">"Qualifier"</v>
+                  <v n="Parent">{1c5c6e05-2bb7-4258-bcee-fd16a540c63c}</v>
+                  <v n="Description">"Qualifier of the action association"</v>
+                </o>
               </d2>
               <d2 n="EnumTemplates" ckt="Guid" cvt="EnumValueTemplate">
+                <v>6ecff51c-9b8f-4338-aab0-67c2b31b07e9</v>
+                <o>
+                  <v n="TemplateGuid">{6ecff51c-9b8f-4338-aab0-67c2b31b07e9}</v>
+                  <l n="Values" t="ArrayList" cet="EnumEntry">
+                    <o>
+                      <v n="Identifier">"None"</v>
+                      <v n="Value">0L</v>
+                      <v n="Key">"None"</v>
+                    </o>
+                    <o>
+                      <v n="Identifier">"Variable"</v>
+                      <v n="Value">1L</v>
+                      <v n="Key">"Variable"</v>
+                    </o>
+                    <o>
+                      <v n="Identifier">"Call"</v>
+                      <v n="Value">2L</v>
+                      <v n="Key">"Call"</v>
+                    </o>
+                  </l>
+                  <v n="BaseType">"INT"</v>
+                </o>
                 <v>79a4fdd5-c859-4de4-aa8d-c03372c880c2</v>
                 <o>
                   <v n="TemplateGuid">{79a4fdd5-c859-4de4-aa8d-c03372c880c2}</v>
@@ -3993,28 +4015,6 @@ END_VAR
                       <v n="Identifier">"ReadWrite"</v>
                       <v n="Value">4L</v>
                       <v n="Key">"ReadWrite"</v>
-                    </o>
-                  </l>
-                  <v n="BaseType">"INT"</v>
-                </o>
-                <v>6ecff51c-9b8f-4338-aab0-67c2b31b07e9</v>
-                <o>
-                  <v n="TemplateGuid">{6ecff51c-9b8f-4338-aab0-67c2b31b07e9}</v>
-                  <l n="Values" t="ArrayList" cet="EnumEntry">
-                    <o>
-                      <v n="Identifier">"None"</v>
-                      <v n="Value">0L</v>
-                      <v n="Key">"None"</v>
-                    </o>
-                    <o>
-                      <v n="Identifier">"Variable"</v>
-                      <v n="Value">1L</v>
-                      <v n="Key">"Variable"</v>
-                    </o>
-                    <o>
-                      <v n="Identifier">"Call"</v>
-                      <v n="Value">2L</v>
-                      <v n="Key">"Call"</v>
                     </o>
                   </l>
                   <v n="BaseType">"INT"</v>
@@ -4077,27 +4077,7 @@ END_IF]]></ST>
             <v n="Version">"3.4.2.0"</v>
             <v n="Namespace">""</v>
             <d2 n="Flags" ckt="Flags" cvt="SFCPropertyFlagData">
-              <v>CurrentStep</v>
-              <o>
-                <v n="Use">false</v>
-                <v n="Declare">true</v>
-              </o>
               <v>EnableLimit</v>
-              <o>
-                <v n="Use">false</v>
-                <v n="Declare">true</v>
-              </o>
-              <v>Error</v>
-              <o>
-                <v n="Use">false</v>
-                <v n="Declare">true</v>
-              </o>
-              <v>ErrorPOU</v>
-              <o>
-                <v n="Use">false</v>
-                <v n="Declare">true</v>
-              </o>
-              <v>ErrorStep</v>
               <o>
                 <v n="Use">false</v>
                 <v n="Declare">true</v>
@@ -4107,9 +4087,9 @@ END_IF]]></ST>
                 <v n="Use">false</v>
                 <v n="Declare">true</v>
               </o>
-              <v>Pause</v>
+              <v>Reset</v>
               <o>
-                <v n="Use">false</v>
+                <v n="Use">true</v>
                 <v n="Declare">true</v>
               </o>
               <v>QuitError</v>
@@ -4117,9 +4097,34 @@ END_IF]]></ST>
                 <v n="Use">false</v>
                 <v n="Declare">true</v>
               </o>
-              <v>Reset</v>
+              <v>Pause</v>
               <o>
-                <v n="Use">true</v>
+                <v n="Use">false</v>
+                <v n="Declare">true</v>
+              </o>
+              <v>Error</v>
+              <o>
+                <v n="Use">false</v>
+                <v n="Declare">true</v>
+              </o>
+              <v>Trans</v>
+              <o>
+                <v n="Use">false</v>
+                <v n="Declare">true</v>
+              </o>
+              <v>ErrorStep</v>
+              <o>
+                <v n="Use">false</v>
+                <v n="Declare">true</v>
+              </o>
+              <v>ErrorPOU</v>
+              <o>
+                <v n="Use">false</v>
+                <v n="Declare">true</v>
+              </o>
+              <v>CurrentStep</v>
+              <o>
+                <v n="Use">false</v>
                 <v n="Declare">true</v>
               </o>
               <v>Tip</v>
@@ -4128,11 +4133,6 @@ END_IF]]></ST>
                 <v n="Declare">true</v>
               </o>
               <v>TipMode</v>
-              <o>
-                <v n="Use">false</v>
-                <v n="Declare">true</v>
-              </o>
-              <v>Trans</v>
               <o>
                 <v n="Use">false</v>
                 <v n="Declare">true</v>

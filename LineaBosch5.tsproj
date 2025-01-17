@@ -22,11 +22,23 @@
 		</System>
 		<Plc>
 			<Project GUID="{29CB7897-B4B6-43B5-9EF0-F7F596C949B4}" Name="LineaBosch5PLC" PrjFilePath="LineaBosch5PLC\LineaBosch5PLC.plcproj" TmcFilePath="LineaBosch5PLC\LineaBosch5PLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="LineaBosch5PLC\LineaBosch5PLC.tmc" TmcHash="{E287BF20-1F22-60BE-1B91-A3439B66F21F}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="LineaBosch5PLC\LineaBosch5PLC.tmc" TmcHash="{2F034C1F-3B4C-139F-A41A-6FA536CD1334}">
 					<Name>LineaBosch5PLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>MAIN.ControlSeguridad.CuadroPrincipalRunStop</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.ControlSeguridad.CuadroPrincipalAutomatico</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.ControlSeguridad.SeguridadSetas</Name>
+							<Type>BOOL</Type>
+						</Var>
 						<Var>
 							<Name>GVL.Puesto11_Presencia</Name>
 							<Type>BOOL</Type>
@@ -97,6 +109,10 @@
 						</Var>
 						<Var>
 							<Name>GVL.Puesto92_Presencia</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.Puesto61_Bypass</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -177,10 +193,6 @@
 						</Var>
 						<Var>
 							<Name>GVL.Puesto62.Pulsador1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.Puesto61_Bypass</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -320,18 +332,6 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>MAIN.ControlSeguridad.CuadroPrincipalRunStop</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.ControlSeguridad.CuadroPrincipalAutomatico</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.ControlSeguridad.SeguridadSetas</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>GVL.Puesto71.Pulsador1</Name>
 							<Type>BOOL</Type>
 						</Var>
@@ -359,9 +359,37 @@
 							<Name>GVL.Puesto71.SensorCupulaAtras</Name>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>GVL.Puesto71.SensorCupulaAdelante</Name>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>MAIN.ControlSeguridad.CuadroLedVerde</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.ControlSeguridad.CuadroLedAmarillo</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.ControlSeguridad.MotorSuperior_Freq</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.ControlSeguridad.MotorSuperior_Command</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.ControlSeguridad.MotorInferior_Freq</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.ControlSeguridad.MotorInferior_Command</Name>
+							<Type>INT</Type>
+						</Var>
 						<Var>
 							<Name>GVL.SemaforoRojo</Name>
 							<Type>BOOL</Type>
@@ -797,30 +825,6 @@
 						<Var>
 							<Name>GVL.ElevadorInicioLinea.StopperOFF</Name>
 							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.ControlSeguridad.CuadroLedVerde</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.ControlSeguridad.CuadroLedAmarillo</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.ControlSeguridad.MotorSuperior_Freq</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.ControlSeguridad.MotorSuperior_Command</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.ControlSeguridad.MotorInferior_Freq</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.ControlSeguridad.MotorInferior_Command</Name>
-							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.Puesto71.Ready</Name>
@@ -2460,6 +2464,9 @@
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Terminal67^Term 13 (EL1809)">
 				<Link VarA="PlcTask Inputs^GVL.Puesto61_Presencia" VarB="Channel 3^Input"/>
 				<Link VarA="PlcTask Inputs^GVL.Puesto62_Presencia" VarB="Channel 4^Input"/>
+				<Link VarA="PlcTask Inputs^GVL.Puesto71.Pass" VarB="Channel 8^Input"/>
+				<Link VarA="PlcTask Inputs^GVL.Puesto71.SensorCupulaAdelante" VarB="Channel 7^Input"/>
+				<Link VarA="PlcTask Inputs^GVL.Puesto71.SensorCupulaAtras" VarB="Channel 6^Input"/>
 				<Link VarA="PlcTask Inputs^GVL.Puesto71_Bypass" VarB="Channel 9^Input"/>
 				<Link VarA="PlcTask Inputs^GVL.Puesto71_Presencia" VarB="Channel 11^Input"/>
 				<Link VarA="PlcTask Inputs^GVL.Puesto71_Pulsador" VarB="Channel 10^Input"/>
@@ -2470,6 +2477,9 @@
 				<Link VarA="PlcTask Inputs^GVL.Puesto72_PresenciaPieza" VarB="Channel 16^Input"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Terminal67^Term 14 (EL2809)">
+				<Link VarA="PlcTask Outputs^GVL.Puesto71.CupulaAdelante" VarB="Channel 12^Output"/>
+				<Link VarA="PlcTask Outputs^GVL.Puesto71.CupulaAtras" VarB="Channel 11^Output"/>
+				<Link VarA="PlcTask Outputs^GVL.Puesto71.Ready" VarB="Channel 16^Output"/>
 				<Link VarA="PlcTask Outputs^GVL.Puesto72.Ready" VarB="Channel 9^Output"/>
 				<Link VarA="PlcTask Outputs^GVL.Puesto72_Actuador" VarB="Channel 10^Output"/>
 			</OwnerB>

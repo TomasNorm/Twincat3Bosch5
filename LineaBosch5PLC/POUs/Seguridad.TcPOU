@@ -2950,10 +2950,10 @@ IF TempCiclo.Q AND NOT Lineaready THEN
 		IF NOT 	GVL.Puesto62.FinPuesto THEN gvl.Est_Resultados[gvl.PunteroEst].RetrasoPuesto[12] := TIME_TO_INT(TempRetraso.ET/1000); END_IF 
 		IF NOT 	GVL.Puesto71.FinPuesto THEN gvl.Est_Resultados[gvl.PunteroEst].RetrasoPuesto[13] := TIME_TO_INT(TempRetraso.ET/1000); END_IF 
 		if not 	GVL.Puesto72.FinPuesto then gvl.Est_Resultados[gvl.PunteroEst].RetrasoPuesto[14] := TIME_TO_INT(TempRetraso.ET/1000); END_IF 
-		IF NOT 	GVL.Puesto81.FinPuesto THEN gvl.Est_Resultados[gvl.PunteroEst].RetrasoPuesto[15] := TIME_TO_INT(TempRetraso.ET/1000); END_IF 
+		IF NOT 	GVL.Puesto81.FinPuesto or gvl.Puesto81.LuzRoja THEN gvl.Est_Resultados[gvl.PunteroEst].RetrasoPuesto[15] := TIME_TO_INT(TempRetraso.ET/1000); END_IF 
 		IF NOT 	GVL.Puesto82.FinPuesto THEN gvl.Est_Resultados[gvl.PunteroEst].RetrasoPuesto[16] := TIME_TO_INT(TempRetraso.ET/1000); END_IF 
 		IF NOT 	GVL.Puesto91.FinPuesto THEN gvl.Est_Resultados[gvl.PunteroEst].RetrasoPuesto[17] := TIME_TO_INT(TempRetraso.ET/1000); END_IF 
-		IF NOT 	GVL.Puesto92.FinPuesto THEN gvl.Est_Resultados[gvl.PunteroEst].RetrasoPuesto[18] := TIME_TO_INT(TempRetraso.ET/1000); END_IF 
+		IF NOT 	(GVL.Puesto92.FinPuesto OR gvl.ModoDobleCarga) THEN gvl.Est_Resultados[gvl.PunteroEst].RetrasoPuesto[18] := TIME_TO_INT(TempRetraso.ET/1000); END_IF 
 
 END_IF
 
@@ -2965,7 +2965,7 @@ ELSIF GVL.Puesto72.Fail THEN
 END_IF
 
 
-
+gvl.Est_Resultados[gvl.PunteroEst].horaFin := gvl.HoraActual;
 
 
 
@@ -3288,15 +3288,11 @@ ElevadorFinLinea.SFCreset := TRUE;
       </XmlArchive>
     </ObjectProperties>
     <LineIds Name="Seguridad.CicloLinea_active">
-      <LineId Id="550" Count="58" />
-      <LineId Id="630" Count="5" />
-      <LineId Id="609" Count="20" />
-      <LineId Id="58" Count="0" />
+      <LineId Id="2" Count="85" />
+      <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="Seguridad.CicloLinea_entry">
-      <LineId Id="2" Count="10" />
-      <LineId Id="24" Count="2" />
-      <LineId Id="16" Count="7" />
+      <LineId Id="2" Count="21" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="Seguridad.ComprobarSeguridad">
@@ -3304,8 +3300,7 @@ ElevadorFinLinea.SFCreset := TRUE;
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="Seguridad.ControlDeFallos">
-      <LineId Id="2" Count="5" />
-      <LineId Id="9" Count="5" />
+      <LineId Id="2" Count="11" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="Seguridad.EsperaRunStop_active">
